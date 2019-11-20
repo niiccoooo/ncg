@@ -6,7 +6,7 @@ int main (){
 	const int notengroesse = 5;
 	int noten[notengroesse];
 	float durchschnittsnote, durchfallquote;
-	float anzahlNoten;
+	int anzahlNoten;
 
 	printf("Programm Notenspiegel");
 
@@ -22,7 +22,7 @@ int main (){
 	for ( i = 0; i < notengroesse; i++){
 			printf(" %i    | ", noten[i]);
 	}
-	printf(" %.0f    |", anzahlNoten);
+	printf(" %i    |", anzahlNoten);
 
 	durchschnittsnote = (noten[0] * 1 + noten[1] * 2 + noten[2] * 3 + noten[3] * 4 + noten[4] * 5 ) / anzahlNoten;
 	durchfallquote = noten[4] * 100 / anzahlNoten;
