@@ -5,10 +5,10 @@ int main () {
 	int i;
 	int j;
 	int eingegebeneZahl;
-    int falscheEingabe;
-    const int arraysize = 999;
-    int markiert[arraysize];
-    int counter = 0;
+   	 int falscheEingabe;
+    	const int arraysize = 999;
+   	 int markiert[arraysize];
+   	 int counter = 0;
 
 	printf("Programm zur Primzahlausgabe nach dem Prinzip: ""Sieb des Eratosthenes""\n");
 
