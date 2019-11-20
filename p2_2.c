@@ -6,8 +6,8 @@ int main () {
 	int i;
 	int j;
 	int eingegebeneZahl;
-    int falscheEingabe;
-    bool markiert[1000] = {0};
+   	int falscheEingabe;
+   	bool markiert[1000] = {0};
 
 	printf("Programm zur Primzahlausgabe nach dem Prinzip: ""Sieb des Eratosthenes""\n");
 
@@ -27,7 +27,7 @@ int main () {
                }
         }
 	}
-    int primzahlen[1000];
+   	int primzahlen[1000];
 	int counter = 0;
 
 	for (i = 2; i <= eingegebeneZahl; i++) {
@@ -37,7 +37,7 @@ int main () {
         }
 	}
 
-    printf("\n");
+   	printf("\n");
 	printf("In der Zahl %i gibt es %i Primzahlen\n", eingegebeneZahl, counter);
 	printf("Die Primzahlen der Zahl %i sind:\n", eingegebeneZahl);
 	for (i = 0; i <= eingegebeneZahl; i++) {
