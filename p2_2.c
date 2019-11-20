@@ -1,12 +1,11 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 int main () {
 
 	int i;
 	int j;
 	int eingegebeneZahl;
-   	int falscheEingabe;
+  	int falscheEingabe;
    	int markiert[1000] = {0};
 
 	printf("Programm zur Primzahlausgabe nach dem Prinzip: ""Sieb des Eratosthenes""\n");
@@ -19,11 +18,15 @@ int main () {
 			printf("Fehler! Bitte Eingabebedingungen beachten!\n");
 		}
 	} while (falscheEingabe);
+	
+	for (i = 2; i <= 1000; i++) {
+        markiert[i] = 1;
+	}
 
 	for(i = 2; i <= eingegebeneZahl; i++) {
-        if (!markiert[i-2]) {
+        if (markiert[i-2]) {
                for (j = 2 * i; j <= eingegebeneZahl; j += i) {
-                    markiert[j-2] = true;
+                    markiert[j-2] = 0;
                }
         }
 	}
@@ -36,7 +39,6 @@ int main () {
         counter++;
         }
 	}
-
    	printf("\n");
 	printf("In der Zahl %i gibt es %i Primzahlen\n", eingegebeneZahl, counter);
 	printf("Die Primzahlen der Zahl %i sind:\n", eingegebeneZahl);
@@ -48,4 +50,5 @@ int main () {
 	printf("\n");
 	return 0;
 }
+
 
