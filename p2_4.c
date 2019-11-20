@@ -36,17 +36,17 @@ int main (){
 	int i;
 	const int zahlengroesse = 6;
 	int zahlenfolge[zahlengroesse];
-    int n = sizeof(zahlenfolge)/sizeof(zahlenfolge[0]);
+   	int n = sizeof(zahlenfolge)/sizeof(zahlenfolge[0]);
 
 	for (i = 0; i < zahlengroesse; i++) {
 		printf("Bitte geben Sie Zahl %i ein\n", i+1);
 		scanf("%i", &zahlenfolge[i]);
 	}
-
 	printf("Ungeordnetes Arrray:\n");
 	printArray(zahlenfolge, n);
 	printf("\n\nGeordnetes Array:\n");
 	bubbleSort(zahlenfolge, n);
 	printArray(zahlenfolge, n);
+	printf("\n");
 	return 0;
 }
