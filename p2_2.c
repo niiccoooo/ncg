@@ -20,32 +20,31 @@ int main () {
 	} while (falscheEingabe);
 	
 	for (i = 2; i <= 1000; i++) {
-        markiert[i] = 1;
+        	markiert[i] = 1;
 	}
-
 	for(i = 2; i <= eingegebeneZahl; i++) {
-        if (markiert[i-2]) {
-               for (j = 2 * i; j <= eingegebeneZahl; j += i) {
-                    markiert[j-2] = 0;
-               }
-        }
+        	if (markiert[i-2]) {
+              		for (j = 2 * i; j <= eingegebeneZahl; j += i) {
+                	    markiert[j-2] = 0;
+               		}
+        	}
 	}
    	int primzahlen[1000];
 	int counter = 0;
 
 	for (i = 2; i <= eingegebeneZahl; i++) {
-        if (!markiert[i-2]) {
-        primzahlen[counter] = i;
-        counter++;
-        }
+        	if (!markiert[i-2]) {
+       			primzahlen[counter] = i;
+        		counter++;
+       		}
 	}
    	printf("\n");
 	printf("In der Zahl %i gibt es %i Primzahlen\n", eingegebeneZahl, counter);
 	printf("Die Primzahlen der Zahl %i sind:\n", eingegebeneZahl);
 	for (i = 0; i <= eingegebeneZahl; i++) {
-        if (markiert[i] = 1) {
-            printf("%i, ", primzahlen[i]);
-        }
+        	if (markiert[i] = 1) {
+           		printf("%i, ", primzahlen[i]);
+       		}
 	}
 	printf("\n");
 	return 0;
