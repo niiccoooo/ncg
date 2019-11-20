@@ -7,7 +7,7 @@ int main () {
 	int j;
 	int eingegebeneZahl;
    	int falscheEingabe;
-   	bool markiert[1000] = {0};
+   	int markiert[1000] = {0};
 
 	printf("Programm zur Primzahlausgabe nach dem Prinzip: ""Sieb des Eratosthenes""\n");
 
