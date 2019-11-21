@@ -42,10 +42,10 @@ int main () {
 	printf("Bis zur Zahl %i gibt es %i Primzahlen\n", eingegebeneZahl, anzahl);
 	printf("Die Primzahlen sind:\n", eingegebeneZahl);
 	for (i = 0; i <= anzahl; i++) {
-           	printf("%i, ", primzahl[i]);
+           	printf("|%i ", primzahl[i]);
        		}
 	}
-	printf("\n");
+	printf("|\n");
 	return 0;
 }
 
