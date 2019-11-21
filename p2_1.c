@@ -39,12 +39,12 @@ int main (){
 			printf("\nGewonnen! Poker!\n");
 			return 0;			
 		} else if ( augenzahl[i] == 2) {
-            for ( int j = 0;j < gaugenzahl; j++) {
-                if ( augenzahl[j] == 3) {  
-                    printf("\nGewonnen! Full House!\n");
-                    return 0;
-                }
-            }
+            		for ( int j = 0;j < gaugenzahl; j++) {
+              		  if ( augenzahl[j] == 3) {
+				printf("\nGewonnen! Full House!\n");
+                   	  	return 0;
+			  }
+            		}
 	    }	
     }
 
