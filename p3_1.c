@@ -41,17 +41,17 @@ int main() {
             scanf("%c", &answer);
             printf("\n");
             switch (answer) {
-                case          'j': printf("Bitte Buchstaben eingeben: "); // Es wird zwischen Groß- und Kleinschreibung unterschieden
-                                   fflush(stdin);
-                                   scanf("%c", &buchstabe);
-                                   printf("\n");
-                                   printf("Der Buchstabe %c kommt %i-mal vor.\n", buchstabe, sucheZeichen(name, buchstabe));
-                                   printf("\n");
-                                   break;
-                case          'n': printf("Auf Wiedersehen!\n");
-                                   return 0;
-                case !'j' && !'n': printf("Falsche Eingabe!\n");
-                                   break;
+                case 'j': printf("Bitte Buchstaben eingeben: "); // Es wird zwischen Groß- und Kleinschreibung unterschieden
+                          fflush(stdin);
+                          scanf("%c", &buchstabe);
+                          printf("\n");
+                          printf("Der Buchstabe %c kommt %i-mal vor.\n", buchstabe, sucheZeichen(name, buchstabe));
+                          printf("\n");
+                          break;
+                case 'n': printf("Auf Wiedersehen!\n");
+                          return 0;
+               default  : printf("Falsche Eingabe!\n");
+                          break;
             }
     }
 
