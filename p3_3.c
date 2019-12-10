@@ -18,30 +18,35 @@ void addArticle() {
 	int amount;
 	char articleName[MAX_ARTICLE_LENGTH];
 
-	for(i = 0; i < 2; i++) {
+	for(i = 0; i < 1; i++) {
 		printf("Please enter the name of the article: ");
 		fflush(stdin);
 		scanf("%s", articleName);
 		printf("\n");
-		printf("\nPlease enter the amount: ");
+		printf("Please enter the amount: ");
 		fflush(stdin);
 		scanf("%i", &amount);
 		for(j = 0; j < MAX_ENTRIES; j++) {
 			if(strcmp(stocklist[j].articleName, articleName) == 0) {
 				stocklist[j].amount = stocklist[j].amount + amount;
+				printf("\n");
 				printf("Article added!\n");
+				printf("\n");
 				break;
 
 			}else if (stocklist[j].articleName[0] == '\0') {
 				strcpy(stocklist[j].articleName, articleName);
 				stocklist[j].amount = amount;
+				printf("\n");
 				printf("Article added!\n");
+				printf("\n");
 				break;
 			}
 		}
 	}
 	if(j == MAX_ENTRIES) {
-		printf("stocklist is already on its capacity!");
+		printf("stocklist is already on its capacity!\n");
+		printf("\n");
 	}
 	
 	
@@ -53,28 +58,32 @@ void removeArticle() {
 	int amount;
 	char articleName[MAX_ARTICLE_LENGTH];
 
-	for(i = 0; i < 2; i++) {
+	for(i = 0; i < 1; i++) {
 		printf("Please enter the name of the article: ");
 		fflush(stdin);
 		scanf("%s", articleName);
 		printf("\n");
-		printf("\nPlease enter the amount: ");
+		printf("Please enter the amount: ");
 		fflush(stdin);
 		scanf("%i", &amount);
+		printf("\n");
 		for(j = 0; j < MAX_ENTRIES; j++) {
 			if(strcmp(stocklist[j].articleName, articleName) == 0) {
 				stocklist[i].amount = stocklist[j].amount - amount;
 				if(stocklist[j].amount < 0) {
 					printf("Error! Article amount can't be below 0!\n");
+					printf("\n");
 					break;
 				}
 			printf("Article removed!\n");
+			printf("\n");
 			break;
 			}
 		}
 	}
 	if(j == MAX_ENTRIES) {		
 		printf("Error! Article couldn't be found!\n");
+		printf("\n");
 	}
 }
 		
@@ -83,20 +92,23 @@ void searchEntry() {
 	int i, j;
 	char articleName[MAX_ARTICLE_LENGTH];
 
-	for(i = 0; i < 2; i++) {
+	for(i = 0; i < 1; i++) {
 		printf("Please enter the name of the article: ");
 		fflush(stdin);
 		scanf("%s", articleName);
+		printf("\n");
 		for(j = 0; j < MAX_ENTRIES; j++) {
 			if(strcmp(stocklist[j].articleName, articleName) == 0) {
 				printf("Article: %s\n", stocklist[j].articleName);
 				printf("Amount : %i\n", stocklist[j].amount);
+				printf("\n");
 				break;
 			}
 		}
 	}
 	if(j == MAX_ENTRIES) {
 		printf("Error! Article couldn't be found!\n");
+		printf("\n");
 	}
 }
 
@@ -106,10 +118,13 @@ void printStocklist() {
 
 	for(i = 0; i < MAX_ENTRIES; i++) {
 		if(stocklist[i].articleName[0] != '\0') {
-			printf("Article: %s\t", stocklist[i].articleName);
-			printf("Amount: %i\n", stocklist[i].amount);
+			printf("Article: %s\t\t", stocklist[i].articleName);
+			printf("\n");
+			printf("Amount: %i\n\t", stocklist[i].amount);
+			printf("\n");
 			}
 	}
+	printf("\n");
 }
 
 void mainMenu() {
@@ -117,6 +132,7 @@ void mainMenu() {
 	printf("Main menu\n");
 	printf("\n");
 	printf("Please choose between the following functions:\n");
+	printf("\n");
 	printf("1 - Add article\n");
 	printf("2 - Remove article\n");
 	printf("3 - Search entry\n");
@@ -156,10 +172,10 @@ void sidemenu_printStocklist() {
 	printf("2 - Back to main menu\n");
 }
 
-void menuEntry(int x) {
+void menuEntry(int* x) {
 
 	fflush(stdin);
-	scanf("%i", &x);
+	scanf("%i", x);
 	printf("\n");
 }
 
@@ -172,8 +188,8 @@ void wrongMenuEntry() {
 
 int main() {
 
-	int mainmenuAnswer;
-	int sidemenuAnswer;
+	int mainmenuAnswer = 0;
+	int sidemenuAnswer = 0;
 	int i = 0, j = 0;
 
 	for(i = 0; i < MAX_ENTRIES; i++) {
@@ -186,12 +202,12 @@ int main() {
 
 	for(;;) {
 		mainMenu();
-		menuEntry(mainmenuAnswer);
+		menuEntry(&mainmenuAnswer);
 		switch(mainmenuAnswer) {
 			case 1:
 				for(;;) {
 					sidemenu_addArticle();
-					menuEntry(sidemenuAnswer);
+					menuEntry(&sidemenuAnswer);
 					if(sidemenuAnswer == 1) {
 						addArticle();
 					}else if(sidemenuAnswer == 2) {
@@ -205,7 +221,7 @@ int main() {
 			case 2:
 				for(;;) {
 					sidemenu_removeArticle();
-					menuEntry(sidemenuAnswer);
+					menuEntry(&sidemenuAnswer);
 					if(sidemenuAnswer == 1) {
 						removeArticle();
 					}else if(sidemenuAnswer == 2) {
@@ -219,7 +235,7 @@ int main() {
 			case 3:
 				for(;;) {
 					sidemenu_searchEntry();
-					menuEntry(sidemenuAnswer);
+					menuEntry(&sidemenuAnswer);
 					if(sidemenuAnswer == 1) {
 						searchEntry();
 					}else if(sidemenuAnswer == 2) {
@@ -233,7 +249,7 @@ int main() {
 			case 4: 
 				for(;;) {
 					sidemenu_printStocklist();
-					menuEntry(sidemenuAnswer);
+					menuEntry(&sidemenuAnswer);
 					if(sidemenuAnswer == 1) {
 						printStocklist();
 					}else if(sidemenuAnswer == 2) {
@@ -253,4 +269,3 @@ int main() {
 		}		
 	}
 }
-	
