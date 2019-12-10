@@ -30,7 +30,7 @@ int main() {
     char buchstabe = 0;
 
     printf("Bitte Namen eingeben:  ");
-    scanf("%s", &name);
+    scanf("%s", name);
     printf("\n");
     printf("%s hat %i Zeichen\n", name, laengeZeichenkette(name));
     printf("\n");
