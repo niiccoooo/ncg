@@ -11,7 +11,7 @@ int laengeZeichenkette (const char s[]) {
 int sucheZeichen(const char s[], char c) {
 
     int anzahl = 0;
-    int i;
+    int i = 0;
 
     for(; '\0' != s[i]; i++) {
             if (c == s[i]) {
@@ -23,7 +23,7 @@ int sucheZeichen(const char s[], char c) {
 
 int main() {
 
-    int i, j;
+    int i = 0, j = 0;
     const int zeichenlaenge = 50;
     char name[zeichenlaenge];
     char answer = 0;
