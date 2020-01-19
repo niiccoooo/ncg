@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class P4_3 {
+	public static Scanner in;
+
+	public static void main(String[] args) {
+		in = new Scanner(System.in);
+		int[] array = {1,2,3,4,5,6,7,8,9,10};
+		System.out.printf("Bitte geben Sie eine Zahl ein nach der gesucht werden soll: ");
+		int x = nextInt();
+		System.out.printf("%d", binsearch(x);
+	}	
+
+	public static int binsearch(int x) {
+		
+	}	
+}
